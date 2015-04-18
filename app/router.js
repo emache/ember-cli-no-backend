@@ -9,4 +9,5 @@ export default Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('testimonials');
+  this.route('approach');
 });
