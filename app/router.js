@@ -10,4 +10,5 @@ export default Router.map(function() {
   this.route('contact');
   this.route('testimonials');
   this.route('approach');
+  this.resource('projects', function() {});
 });
