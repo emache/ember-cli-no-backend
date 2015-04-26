@@ -1,0 +1,8 @@
+@import "typography/body.scss";
+@import "typography/headers.scss";
+
+$bgcolor: blue;
+
+h2 {
+  color: $bgcolor;
+}
