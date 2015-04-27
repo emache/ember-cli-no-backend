@@ -1,0 +1,35 @@
+.navigation {
+    width: 100%;
+    height: 50px;
+    background-color: $darkPrimary; 
+    line-height: 32px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.2em;
+
+    a:link{
+        text-decoration: none;
+    }
+
+    a {
+        @include link-colors(#fff, darken(#fff,10), #fff, #fff, #fff);    
+    }
+
+    a.active {
+        color: darken(#fff,10);
+    }
+    
+
+}
+
+.navigation ul {
+    margin: 0;
+    height: 50px;
+}
+
+li {
+    display: inline;
+    width: auto;
+    margin: 0 10px;
+}
+

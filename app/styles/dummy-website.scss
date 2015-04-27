@@ -1,8 +1,6 @@
-@import "typography/body.scss";
-@import "typography/headers.scss";
+@import "compass/typography/links/link-colors";
 
-$bgcolor: blue;
-
-h2 {
-  color: $bgcolor;
-}
+@import "base/colours";
+@import "base/layout";
+@import "base/typography";
+@import "components/navigation";
