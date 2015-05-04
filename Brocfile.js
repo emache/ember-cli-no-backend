@@ -36,7 +36,7 @@ var convertProjectsFiles = function() {
         // Load
         var project = loadFile(ymlName);
         var fileName = ymlName.replace('data/projects/', '').replace('.md', '');
-
+        fs.writeFileSync('api/projects/' + fileName + '.json', JSON.stringify(project));
         // Store summary for index
         index.push(
             {
@@ -47,13 +47,14 @@ var convertProjectsFiles = function() {
                 slug: fileName
             });
     });
-
+    
     fs.writeFileSync('api/projects/index.json', JSON.stringify(index));
 };
 
+
 convertProjectsFiles();
 
-var projectsData = funnel('api/projects', {
+var projectsDataApi = funnel('api/projects', {
     destDir: 'api/projects/'
 });
 
@@ -71,4 +72,4 @@ var projectsData = funnel('api/projects', {
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-module.exports = app.toTree([projectsData]);
+module.exports = app.toTree([projectsDataApi]);
