@@ -41,9 +41,8 @@ var convertProjectsFiles = function() {
         index.push(
             {
                 title: project.title,
-                colour: project.colour,
-                date: project.date,
-                previewImgUrl: project.previewImgUrl,
+                someOtherMetaData : project.someOtherMetaData,
+                featuredImgUrl: project.featuredImgUrl,
                 slug: fileName
             });
     });
@@ -58,6 +57,9 @@ var projectsDataApi = funnel('api/projects', {
     destDir: 'api/projects/'
 });
 
+var projectsAssets = funnel('data/projects/assets', {
+    destDir: 'api/projects/assets/'
+});
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
@@ -72,4 +74,4 @@ var projectsDataApi = funnel('api/projects', {
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-module.exports = app.toTree([projectsDataApi]);
+module.exports = app.toTree([projectsDataApi, projectsAssets]);
