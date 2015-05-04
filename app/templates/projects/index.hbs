@@ -1,0 +1,11 @@
+<h3>Project/Index comes here</h3>
+
+{{#each project in controller}}
+<article {{bind-attr class="project.colour :preview"}}>
+    <div class="row">
+        <div class="small-10 small-offset-1 medium-6 large-offset-0 columns end info">
+                <h2>{{project.title}}</h2>
+        </div>
+    </div>
+</article>
+{{/each}}
