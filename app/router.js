@@ -9,5 +9,9 @@ export default Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('approach');
-  this.resource('projects', function() {});
+  this.resource('projects', function() {
+    this.route('view', {
+      path: ':project_slug'
+    });
+  });
 });
