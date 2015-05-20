@@ -2,7 +2,7 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var funnel = require('broccoli-funnel');
-var md2json = require('./broccoli/index');
+var md2json = require('broccoli-md-to-json');
 
 var app = new EmberApp();
 
@@ -10,10 +10,6 @@ var convertedMD = md2json('./data/projects', {
     inputFiles: ['*.md', '**/*.md'],
     destDir: 'api/projects/',
     indexData: ['title', 'someOtherMetaData', 'featuredImgUrl']
-});
-
-var projectsDataApi = funnel('api/projects', {
-    destDir: 'api/projects/'
 });
 
 var projectsAssets = funnel('data/projects/assets', {
@@ -33,4 +29,4 @@ var projectsAssets = funnel('data/projects/assets', {
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-module.exports = app.toTree([projectsDataApi, projectsAssets]);
+module.exports = app.toTree([convertedMD, projectsAssets]);

@@ -21,6 +21,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
     "broccoli-funnel": "^0.2.3",
+    "broccoli-md-to-json": "https://github.com/emache/broccoli-md-to-json/tarball/master",
     "ember-cli": "0.2.3",
     "ember-cli-app-version": "0.3.3",
     "ember-cli-babel": "^5.0.0",
